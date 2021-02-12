@@ -39,10 +39,15 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
+//Code Here
 function showValues( obj ) {
-  //Code Here
-}
+  let newStr = '';
 
+  for (var key in obj) {
+    newStr += obj[key]
+  }
+  return newStr
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -54,7 +59,14 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const greaterThan10 = (obj) => {
+  for (var key in obj) {
+    if(obj[key] > 10) {
+      obj[key]=0
+    }
+  }
+  return(obj)
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +78,12 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const double = (obj) => {
+  for (var key in obj) {
+    obj[key] *= 2
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +97,19 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const secrets = (obj) => {
+  var newStr = '';
+  for (var key in obj) {
+    var keyStr = JSON.stringify(key)
+    var subStr = "sh"
+    var keySlice = keyStr.slice(1,4)
+    
+      if(keySlice.includes(subStr)){
+        newStr += obj[key]
+      }
+  }
+  return newStr
+}
 
 
 /* 
@@ -111,18 +140,23 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+const removePassword = (obj) => {
+  for (var key in obj) {
+    delete obj.password
+  }
+  return obj
+}
 
 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var deleteTheBigNumbers = {
-  first: 10,
-  second: 20,
-  third: 110,
-  fourth: 200
-}
+// var deleteTheBigNumbers = {
+//   first: 10,
+//   second: 20,
+//   third: 110,
+//   fourth: 200
+// }
 // Do not edit the code above.
 
 /*
@@ -130,6 +164,14 @@ var deleteTheBigNumbers = {
 */
 
 //Code Here
+const deleteTheBigNumbers = (obj) => {
+  for (var key in obj){
+    if(obj[key] > 100) {
+      delete obj.key
+    }
+  }
+  return obj
+}
 
 
 
@@ -142,9 +184,17 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+// Code Here
 
-
+const startsWithK = (obj) => {
+  for (var key in obj) {
+    var keyStr = JSON.stringify(key)
+    if(key[0] === 'k') {
+      delete obj[key]
+    }
+  }
+  return obj
+}
 
 ////////// PROBLEM 8 //////////
 
