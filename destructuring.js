@@ -74,13 +74,12 @@ function totalPopulation( obj ) {
 */
 
 //Code Here
-function ingredients( obj ) {
-  const { carb, fat, protien } = obj
-
-  var arr = []
-  arr.push(carb,fat,protien)
-  return arr
-}
+function ingredients(obj){
+  let {carb, fat, protein} = obj;
+  let myArray = []
+  myArray.push(carb, fat, protein)
+  return myArray 
+  }
 
 
 ////////// PROBLEM 5 //////////
@@ -113,7 +112,11 @@ function largeNumbers( { first,second,third } ){
 */
 
 //Code Here
-function numberGroups( {a,b,c} ) {
-
-} 
-
+function numberGroups({a, b, c}){
+  let longestLength = Math.max(a.length, b.length, c.length)
+  if(a.length === longestLength){
+    return a
+  } else if (b.length === longestLength){
+    return b
+  } else {return c}
+}
